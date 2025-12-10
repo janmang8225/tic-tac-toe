@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Multiplayer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Tic <span class="highlight">Tac</span> Toe</h1>
+
+        <div id="lobby" class="card fade-in">
+            <button id="createBtn" class="btn primary">Create New Room</button>
+            <div class="divider"><span>OR</span></div>
+            <div class="join-group">
+                <input type="text" id="roomInput" placeholder="Enter Room Code" maxlength="5">
+                <button id="joinBtn" class="btn secondary">Join</button>
+            </div>
+            <p id="errorMsg" class="error"></p>
+        </div>
+
+        <div id="game" class="hidden fade-in">
+            <div class="header">
+                <div class="header-left">
+                    <button id="leaveBtn" class="btn-icon">← Leave</button>
+                    <span class="room-pill">Room: <span id="currentRoom">...</span></span>
+                </div>
+                <div class="player-info">You: <span id="mySymbol">...</span></div>
+            </div>
+
+            <div class="status" id="statusText">Waiting for opponent...</div>
+
+            <div class="board-container">
+                <div class="board" id="board">
+                    <div class="winning-line" id="winningLine"></div>
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultModal" class="modal hidden">
+            <div class="modal-content scale-in">
+                <h2 id="winnerText">You Win!</h2>
+                <div class="timer">New Game in <span id="countdown">5</span>s</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
